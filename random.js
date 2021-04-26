@@ -12,15 +12,9 @@ function pageLoad () {
   a.appendChild(linkText);
   a.title = "This is the week 1 Link";
   a.href = "week1/week1index.html";
-  document.body.appendChild(a);
-  
- 
- 
-  
-  
+
   var y = document.createElement("LI");
-  var t = document.createTextNode(a);
-  y.appendChild(t);
+  y.appendChild(a);
   document.getElementById("dynamic").appendChild(y);
 }
 
