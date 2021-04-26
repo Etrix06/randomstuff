@@ -1,34 +1,25 @@
 const links = [
-  {
-     label: "Week1 notes",
-     url: "week1/week1index.html"
-  },
-  {  label: "Week2 notes",
-     url: "week2/week2index.html"
+     {  label: "Week 1",        url: "week1/week1index"    },
+     {  label: "Week 2",        url: "week2/week2index"    }
      
-  },
-  {
-     label: "Week3 notes",
-     url: "week3/week3index.html"
-  },
-  {
-    label: "Week4 notes",
-     url: "week4/week4index.html"   
-  },
-  {
-     label: "Week5 notes",
-     url: "week5/week5index.html"  
-  },
-  {
-     label: "Week6 notes",
-     url: "week6/week6index.html"  
-  },
-  {
-     label: "Week7 notes",
-     url: "week7/week7index.html"  
-  }
-  ];
+]
+
+function pageLoad () {
+  
+  
+  var a = document.createElement("A"); 
+  a.setAttribute("href", "week1/week1index");
+  var b = document.createTextNode("Week 1");
+  a.appendChild(b);
+ 
+  
+  
+  var y = document.createElement("LI");
+  var t = document.createTextNode(a);
+  y.appendChild(t);
+  document.getElementById("dynamic").appendChild(y);
+}
 
 function testFunction () {
-   document.getElementById("testid").innerHTML= links;
+   document.getElementById("demo").innerHTML= "yo";
 }
