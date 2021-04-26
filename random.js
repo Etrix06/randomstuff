@@ -6,11 +6,15 @@ const links = [
 
 function pageLoad () {
   
+  //Create the element
+  var a = document.createElement("a"); 
+  var linkText = document.createTextNode("Week 1");
+  a.appendChild(linkText);
+  a.title = "This is the week 1 Link";
+  a.href = "week1/week1index.html";
+  document.body.appendChild(a);
   
-  var a = document.createElement("A"); 
-  a.setAttribute("href", "week1/week1index");
-  var b = document.createTextNode("Week 1");
-  a.appendChild(b);
+ 
  
   
   
