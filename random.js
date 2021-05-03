@@ -1,5 +1,5 @@
 const links = [
-     {  label: "NEGL Page",        url: "NEGL/mainIndex.html"    },
+     {  label: "NEGL Page",        url: "NEGL/NeglMainIndex.html"    },
      {  label: "Week 2",        url: "week2/week2index"    }
      
 ]
