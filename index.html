@@ -7,15 +7,21 @@
   <title>Random stuff Index</title>
   <script src="random.js"></script>
   <style>
-
+    #smallImage {
+      height: 200px;
+      width: 180px;
+      
+    }
   </style>
 </head>
-<body onload="pageLoad()">
+<body onload="addToIndex()" style="background-color:powderblue;">
   <h1>Random stuff page</h1>
+  <h2>Serving as the launch pad for my pet projects</h2>
+  <img id="smallImage" src="Me.jpeg" alt="My Picture">
 
 <p id="demo">Test</p>
 <button type="button" onclick="testFunction()">Click me</button>
-<ol id="dynamic"></ol>
+<ol id="indexList"></ol>
 
 
 
