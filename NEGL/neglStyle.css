@@ -1,6 +1,9 @@
 body {
-  background-image: url("NEGL.jpg");
-  background-repeat: no-repeat;
+  background-image: url("NEGL2.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+
+  
 }
 header { 
   display: block; 
