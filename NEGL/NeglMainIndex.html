@@ -4,34 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>NEGL Videos</title>
+  <title>NEGL Brickfilms</title>
   <link rel="stylesheet" type="text/css" href="neglStyle.css">
   <style>
-    h2 {
-      color: Yellow;
-      font-size: 40px;
-      margin-left: 50px;
 
+    #div1 {
+      background-color: rgb(255, 72, 0);
+      border-radius: 12px;
+      opacity: .8;
+      padding: 1px 12px;
+      margin-right: 45px;
+      margin-left: 45px;
     }
-    .topnav a.active {
+    #div1 p {
+      font-size: 20px;
+    }
+    #div2 {
+      opacity: .8;
+      margin-top: 250px;
+      font-family: cursive;
+      color: rgb(1, 27, 1);
       background-color: yellow;
-      color: green;
+      border-radius: 12px;
+      padding: 1px 12px;
+      margin-right: 45px;
+      margin-left: 45px;      background-color: rgb(35, 161, 3);
+      border-radius: 12px;
+      padding: 1px 12px;
+      margin-right: 45px;
+      margin-left: 45px;
     }
-    video {
-      margin-left: 50px;
-    }
-    h3 {
-      border: 4px solid green;
-      width: 25%;
+    #div3 {
+      opacity: .8;
+      margin-top: 20px;
+      font-family: cursive;
       color: green;
       background-color: yellow;
-      font-size: 35px;
-      margin-left: 50px;
+      border-radius: 12px;
+      padding: 1px 12px;
+      margin-right: 45px;
+      margin-left: 45px;      background-color: yellow;
+      border-radius: 12px;
+      padding: 1px 12px;
+      margin-right: 45px;
+      margin-left: 45px;
     }
-    img.amigos {
-      margin-left: 50px;
-      width: 400px;
-      height: 300px;
+    span.blue {
+      color: blue;
+    }
+    span.red {
+      color: rgb(255, 251, 0);
+    }
+
+    h2 {
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
     .center, hr {
       text-align: center;
@@ -39,40 +65,54 @@
       color: yellow;
       font-size: 12px;
     }
+
+  
   </style>
 </head>
 <body>
-    <header>
-        <a href="https://www.youtube.com/channel/UCSVLMgVK5KuHqtSDuDuW8Cg">
-         <img class="facebook" src="facebook.jpeg" alt="YouTube">
-        </a>
-        <a href="https://www.youtube.com/channel/UCSVLMgVK5KuHqtSDuDuW8Cg">
-         <img class="youtube" src="YTarrow.png" alt="YouTube">
-       </a>
-       <a href="http://127.0.0.1:5500/assign04/assign04.html#home">
-         <img src="neglbrick2.jpg" alt="Negl brick">  
-       </a>
-       <h1>NEGL Brickfilms</h1>
-       <p>Stop motion videos by Erik Alcala</p>
-       <div class="topnav">
-           <a href="../index.html">Home</a>
-           <a class="active" href="construction.html">Videos</a>
-           <a href="construction.html">Contact</a>
-         </div> 
-     </header>
-     <h2>Videos</h2>
-     <video width="400" controls>
-       <source src="Negl_Intro.mp4" type="video/mp4"> Your browser does not support HTML video.>
-      </video>
-      <h3>Top Viewed on YouTube</h3>
-      <a href="https://www.youtube.com/watch?v=w5ERdRjRlNM">
-        <img class="amigos" src="threeamigos.jpg" alt="Three amigos">
-      
-        
-      </a>
-      <footer>
-          <hr> 
-          <p class="center">CS-213 2020</p>
-      </footer>
+  
+  <header>
+     <a href="https://www.facebook.com/erik.alcala06">
+      <img class="facebook" src="facebook.jpeg" alt="YouTube">
+     </a>
+      <a href="https://www.youtube.com/channel/UCSVLMgVK5KuHqtSDuDuW8Cg">
+      <img class="youtube" src="YTarrow.png" alt="YouTube">
+    </a>
+    
+    <img src="neglbrick2.jpg" alt="Negl brick">
+    <h1>NEGL Brickfilms</h1>
+    <p>Stop motion videos by Erik Alcala</p>
+    <div class="topnav">
+        <a class="active" href="NeglMainIndex.html">Home</a>
+        <a href="NeglVideoIndex.html">Videos</a>
+        <a href="construction.html">Contact</a>
+      </div>
+  </header>
+  <br>
+  <div id="div1">
+    <h1>Welcome to NEGL</h1>
+    <p>My son and I started making stop motion movies with our <span class="blue">LEGO</span> toys one day, 
+      and we decided to start a <span class="red">YouTube</span> channel to share them with our friends.
+    </p>
+    <p>
+      NEGL stands for the first initials of my family's name.  I am the <span class="blue">E</span>.
+    </p>
+  </div>
+  <div id="div2">
+      <h2>What is Brickfilm?</h2>
+      <p>Brickfilms are basically stop-motion movies made with LEGO blocks.  
+        You take one picture, slowly move the toy, and take another picture.
+        Then, after you have taken enough pictures, you connect all the pictures 
+        and make a movie out of it.  It is a long and tedious process, but very rewarding.</p>
+    </div>
+    <div id="div3">
+        <h2>Come see what we've built.</h2>
+        <p>Explore this <a href="NeglVideoIndex.html">site</a> or come visit our 
+          <a href="https://www.youtube.com/channel/UCSVLMgVK5KuHqtSDuDuW8Cg">Youtube</a>  channel for more videos.</p>
+      </div>
+    <footer>
+      <hr> 
+      <p class="center">CS-213 2020</p>
+  </footer>
 </body>
 </html>
