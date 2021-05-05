@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Assign08</title>
+  <style>
+    body {
+      font-family: Verdana, Geneva, sans-serif;
+    }
+    .blue_rounded {
+      background-color: lightblue;
+      border: solid 1px blue;
+      border-radius: 6px;
+      text-align: center;
+      margin-right: 225px;
+      margin-left: 225px;
+      min-width: 350px;
+      padding: 10px;
+      margin: 10px;
+    }
+    #d2 {
+      
+      background-color: rgb(142, 196, 214);
+      border: solid 1px blue;
+      border-radius: 6px;
+      margin: auto;
+      width: 75%;
+      padding: 10px;
+    }
+
+
+    .white {
+      background-color: whitesmoke;
+      padding: 10px;
+      margin-right: 85px;
+      margin-left: 85px;
+      min-width: 145px;
+    }
+
+    img {
+      max-width: 270px;;
+    }
+    .Items {
+
+      display: inline-block;
+      width: 270px;
+      max-height: 500px;
+      padding: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid blue;    
+      background-color: lightblue; 
+    }
+  
+    .cc {
+      display: inline-block;
+      text-align: left;
+    }
+
+    .center {
+      text-align: center;
+    }
+    .buttons {
+      padding: 15px 10px;
+    }
+
+  </style>
+
+</head>
+
+<body onload="setFocus()">
+  <div id="d1" class="blue_rounded">
+    <h1 id="h1" class="white">The Emporium</h1>
+    <p class="white">One stop shopping.</p>
+
+  </div>
+
+  <!-- Purchase Items -->
+  <div id="d2">
+    <p style="text-align: center">Please select items for purchase.</p>
+    <div class="Items">
+      <img src="Players_handbook.jpg" alt="Players Handbook"> 
+      <p>Dungeons and Dragons Player's Handbook</p>
+      <p>$49.99</p>
+      <form>
+        <input type="checkbox" id="item_0" name="item_0" value="Book" onchange="calculateTotal()">
+        <label for="item_0">Select item</label><br>
+      </form></div>
+      
+    
+    <div class="Items">
+      <img src="dice.jpg" alt="Polyhedral Dice Set">
+      <p>Dice Set</p>
+      <p>$7.99</p>
+      <form>
+          <input type="checkbox" id="item_1" name="item_1" value="Dice" onchange="calculateTotal()">
+          <label for="item_1">Select item</label><br>
+        </form></div>
+        
+
+    <div class="Items">
+      <img src="bz_8ft_surfboard.png" alt="Surfboard">
+      <p>BZ 8' Surfboard</p>
+      <p>$249.99</p>
+      <form>
+          <input type="checkbox" id="item_2" name="item_2" value="Board" onchange="calculateTotal()">
+          <label for="item_2">Select item</label><br>
+        </form></div>
+        
+
+    <div class="Items">
+      <img src="Polypropylene_Jumbo_debris_pan.jpg" alt="Dust Pan">
+      <p>Polypropylene Jumbo Debris Pan</p>
+      <p>$19.99</p>
+      <form>
+          <input type="checkbox" id="item_3" name="item_3" value="Pan" onchange="calculateTotal()">
+          <label for="item_3">Select item</label><br>
+        </form>
+    </div>
+        <!-- Purchase Total -->
+  </div>
+  <div id="d3" class="blue_rounded">
+    <h4>Purchase Total</h4>
+    <p id="total" name="total" >$0.00</p>
+  </div>
+  <div id="d4" class="blue_rounded">
+    <h2>Your Information</h2>
+   
+    <!-- Your Info Form -->
+    <form>
+          
+            
+            <!-- First name -->
+            <label for="first_name">First Name:</label>
+            <input id="first_name" name="first_name" type="text" placeholder="First Name" oninput="clearfName()">   
+            <p id="blank_fName"></p> 
+            <br>
+            
+            <!-- Last name -->
+            <label for="last_name">Last Name:</label>
+            <input id="last_name" name="last_name" type="text" placeholder="Last Name" oninput="clearlName()">
+            <p id="blank_lName"></p> 
+            <br>
+            
+            <!-- Address -->
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="2" cols="19" 
+            placeholder="Enter address here..." oninput="clearAddress()"></textarea>
+            <p id="blank_address"></p> 
+            <br>
+            
+            <!-- Phone Number-->
+            <label for="phone">Phone Num:</label>
+            <input id="phone" name="phone" type="text" placeholder="###-###-####" oninput="isPhoneNumValid()">
+            <p id="notValid"></p>
+       
+  <!-- Payment Info -->
+  
+    <h2>Payment Information</h2>
+    
+        
+          <!-- Credit Card Radio Option -->
+          <div class="cc">
+            <p>Please select your card-type:</p>
+            <input class="cc" type="radio" id="visa" name="card" value="visa">
+            <label for="visa">Visa</label><br>
+            <input class="cc" type="radio" id="mastercard" name="card" value="mastercard">
+            <label for="mastercard">Mastercard</label><br>
+            <input class="cc" type="radio" id="americanexpress" name="card" value="americanexpress">
+            <label for="americanexpress">American Express</label>   
+            <br><br>
+          </div>
+          <br>
+
+          <!-- CC Number -->
+          <label for="credit_card">Card Number:</label>
+          <input id="credit_card" name="credit_card" type="text" placeholder="#### #### #### ####" onkeyup="isCCValid()">
+          <p id="ccNotValid"></p>
+          <br>
+
+          <!-- CC Exp Date -->
+          <label for="exp_date">Exp Date</label>
+          <input id="exp_date" name="exp_date" type="text" placeholder="mm/yyyy" onkeyup="isExpDateValid()">
+          <p id="expDateNotValid"></p>
+          
+
+          <!-- Reset and Submit Buttons -->
+          <div class="buttons">
+            <p id="noItemsSelected"></p>
+            <button id="reset" name="reset" type="reset" value="Reset" onclick="clearForm()">Reset</button>
+            <button id="validate" name="validate" type="button" onclick="validateForm()">Submit</button>
+            <br>
+            
+          </div>
+     </form>
+  </div>
+  <script>
+/************************************
+*CLEARFORM()
+*************************************/
+
+    function clearForm() {
+      document.getElementById("ccNotValid").innerHTML = " ";
+      document.getElementById("notValid").innerHTML = " ";
+      document.getElementById("expDateNotValid").innerHTML = " ";
+      document.getElementById("noItemsSelected").innerHTML = " ";
+      setFocus();
+      document.getElementById("item_0").checked = 0;
+      document.getElementById("item_1").checked = 0;
+      document.getElementById("item_2").checked = 0;
+      document.getElementById("item_3").checked = 0;
+      document.getElementById("total").innerHTML = "$0.00";
+      clearfName();
+      clearlName();
+      clearAddress();
+    }
+
+/************************************
+*SETFOCUS()
+*************************************/
+    function setFocus() {
+      document.getElementById("first_name").focus();
+    }
+
+/************************************
+*CALCULATETOTAL()
+*************************************/ 
+  function calculateTotal() {
+
+    //clear error message
+    document.getElementById("noItemsSelected").innerHTML = " ";
+    
+    // Variable and prices
+    var item0Cost, item1Cost, item2Cost, item3Cost, total; 
+    var item0Price, item1Price, item2Price, item3Price, totalCost;
+    item0Price = 49.99;
+    item1Price = 7.99;
+    item2Price = 249.99;
+    item3Price = 19.99;
+
+    if (document.getElementById("item_0").checked == false) {
+      item0Cost = 0;
+    } else {
+      item0Cost = item0Price;
+    }
+    if (document.getElementById("item_1").checked == false) {
+      item1Cost = 0;
+    } else {
+      item1Cost = item1Price;
+    }
+    if (document.getElementById("item_2").checked == false) {
+      item2Cost = 0;
+    } else {
+      item2Cost = item2Price;
+    }
+    if (document.getElementById("item_3").checked == false) {
+      item3Cost = 0;
+    } else {
+      item3Cost = item3Price;
+    }
+    total = item0Cost + item1Cost + item2Cost + item3Cost;
+    totalCost = total.toFixed(2);
+    document.getElementById("total").innerHTML = "$" + totalCost;
+    }
+
+/************************************
+*ISPHONENUMVALID()
+*************************************/
+    function isPhoneNumValid() {
+        var number;
+        number = document.getElementById("phone").value;
+        var patt = /^(\d{3})[-](\d{3})[-](\d{4})$/g;
+        var result = patt.test(number);
+        if(result == true) {
+          document.getElementById("notValid").innerHTML = " ";
+        } else if(result == false) {
+          document.getElementById("notValid").style.color = "red";
+          document.getElementById("notValid").innerHTML = "###-###-####";
+
+        }
+       
+      }
+/************************************
+*ISCCVALID()
+*************************************/
+    function isCCValid() {
+      var number;
+      number = document.getElementById("credit_card").value;
+      var patt = /^(\d{4})[ ](\d{4})[ ](\d{4})[ ](\d{4})$/g;
+      var result = patt.test(number);
+      if(result == true) {
+          document.getElementById("ccNotValid").innerHTML = " ";
+        } else if(result == false) {
+          document.getElementById("ccNotValid").style.color = "red";
+          document.getElementById("ccNotValid").innerHTML = "#### #### #### ####";
+      }
+    }
+
+/************************************
+*ISEXPDATEVALID()
+*************************************/
+    function isExpDateValid() {
+      var number;
+      number = document.getElementById("exp_date").value;
+      var patt = /^(0[1-9]|10|11|12)[/]20[2-9]{1}[0-9]{1}$/g;
+      var result = patt.test(number);
+      if(result == true) {
+          document.getElementById("expDateNotValid").innerHTML = " ";
+        } else if(result == false) {
+          document.getElementById("expDateNotValid").style.color = "red";
+          document.getElementById("expDateNotValid").innerHTML = "Not a valid exp date or Format. MM/YYYY";
+      }
+    }
+
+/************************************
+*VALIDATEFORM()
+*************************************/
+    function validateForm() {
+      var fName = document.getElementById("first_name").value;
+      var lName = document.getElementById("last_name").value;
+      var address = document.getElementById("address").value;
+      var pNum = document.getElementById("phone").value;
+      var ccNum = document.getElementById("credit_card").value;
+      var expDate = document.getElementById("exp_date").value;
+      var total = document.getElementById("total").value; 
+
+
+      if(document.getElementById("item_0").checked == false && document.getElementById("item_0").checked == false  &&
+         document.getElementById("item_0").checked == false && document.getElementById("item_0").checked == false) {
+        document.getElementById("noItemsSelected").style.color = "red";
+        document.getElementById("noItemsSelected").innerHTML = "No purchase selection made.";
+      }
+      if(expDate == "") {
+        setExpDateFocus();
+        document.getElementById("expDateNotValid").style.color = "red";
+        document.getElementById("expDateNotValid").innerHTML = "Enter CC Exp. date #.";
+      }
+      if(ccNum == "") {
+        setCCFocus();
+        document.getElementById("ccNotValid").style.color = "red";
+        document.getElementById("ccNotValid").innerHTML = "Enter CC #.";
+      }
+      if(pNum == "") {
+        setPhoneFocus();
+        document.getElementById("notValid").style.color = "red";
+        document.getElementById("notValid").innerHTML = "Enter Phone #.";
+      }
+      if(address == "") {
+        setAddressFocus();
+        document.getElementById("blank_address").style.color = "red";
+        document.getElementById("blank_address").innerHTML = "Enter address.";
+      }
+      if (lName == "") {
+        setlNameFocus();
+        document.getElementById("blank_lName").style.color = "red";
+        document.getElementById("blank_lName").innerHTML = "Enter last name.";
+      }
+      if (fName == "") {
+        setfNameFocus();
+        document.getElementById("blank_fName").style.color = "red";
+        document.getElementById("blank_fName").innerHTML = "Enter first name.";
+      }
+      
+      
+
+    }
+/************************************
+*SETFOCUS()
+*************************************/
+    function setfNameFocus() {
+      document.getElementById("first_name").focus();
+    }
+    function setlNameFocus() {
+      document.getElementById("last_name").focus();
+    }
+    function setAddressFocus() {
+      document.getElementById("address").focus();
+    }
+    function setPhoneFocus() {
+      document.getElementById("phone").focus();
+    }
+    function setCCFocus() {
+      document.getElementById("credit_card").focus();
+    }
+    function setExpDateFocus() {
+      document.getElementById("exp_date").focus();
+    }
+    
+/**************************************************
+*CLEAR()
+*************************************************/
+function clearfName() {
+  document.getElementById("blank_fName").innerHTML = "";
+}
+function clearlName() {
+  document.getElementById("blank_lName").innerHTML = "";
+}
+function clearAddress() {
+  document.getElementById("blank_address").innerHTML = "";
+}
+    
+      </script>
+ 
+  
+</body>
+</html>

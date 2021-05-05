@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(195, 227, 247);
+  font-family: Verdana, Geneva, sans-serif;
+}
+div.round_white {
+  background-color: whitesmoke;
+  border: solid 1px blue;
+  border-radius: 6px;
+  text-align: center;
+  margin-right: 225px;
+  margin-left: 225px;
+  min-width: 400px;
+  padding: 10px;
+  margin: 10px;
+}
+.inline {
+  display: inline;
+}
+ 
+#payment {
+  margin-left: 20px;
+  visibility: hidden;
+  
+}
+#aprValidation, #termValidation {
+  visibility: hidden; 
+  color: red;
+}
+
+/* These are to align the input boxes */
+#apr {
+  margin-left: 35px;
+}
+#term {
+  margin-left: 15px;
+}
+#amount {
+  margin-left: -1px;
+}
+.bigger {
+  font-size: 20px;
+ 
+}

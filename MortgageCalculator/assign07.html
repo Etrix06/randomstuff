@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mortgage Calculator</title>
+  <link rel="stylesheet" type="text/css" href="assign07.css">
+  <script>
+    function setAprFocus() {
+      document.getElementById("apr").focus();
+    }
+    function setTermFocus() {
+      document.getElementById("term").focus();
+    }
+    function setAmountFocus() {
+      document.getElementById("amount").focus();
+    }
+
+  </script>
+  
+</head>
+<body onload="setFocus();">
+  <div class="round_white">
+    <h1>Mortgage Calculator</h1>
+  </div>
+    <form>
+      <div class="round_white">
+        <p>Please input your Annual Percentage Rate (APR)</p>
+        <label for="apr">Your APR</label>
+        <input id="apr" type="text" placeholder="From 0 to 25.00%" onblur="isAprValid()">
+        <p id="aprValidation">Enter apr</p>
+      
+
+      
+        <label for="term">Term of Loan</label>
+        <input id="term" type="text" placeholder="in years..1-40" onblur="isTermValid()">
+        <p id="termValidation">.</p>
+        <br>
+
+      
+        <label for="amount">Loan Amount $</label>
+        <input id="amount" type="text" placeholder="Enter loan amount">
+        <br>
+        <br>
+    
+        <label class="bigger">Your Monthly Payment is:</label>
+        <p id="payment">$</p>
+
+      </div>
+
+      <div id="buttons" class="round_white">
+        <button id="clear" type="reset" value="Reset" onclick="clearForm()">Clear</button>
+        <button type="button" onclick="validateForm()">Calculate</button>
+      </div>
+      
+  </form>
+
+  <script> 
+    function isAprValid() {
+      
+      var apr, text;
+      document.getElementById("aprValidation").style.visibility = "visible";
+      // Get the value of the input field with id="apr"
+      apr = document.getElementById("apr").value;
+      document.getElementById("aprValidation").innerHTML = text;
+      // If x is Not a Number or less than zero or greater than 25
+      if (isNaN(apr) || apr < 0 || apr > 25) {
+      text = "Input not valid. Must be number between 0-25";
+      } else {
+        document.getElementById("aprValidation").style.visibility = "hidden";
+        text = "Input OK";
+        document.getElementById("apr").style.backgroundColor = "white";
+        
+      }
+
+      document.getElementById("aprValidation").innerHTML = text;
+}
+
+function isTermValid() {
+  
+  var term, text;
+  document.getElementById("termValidation").style.visibility = "visible";
+  // Get the value of the input field with id="term"
+  term = document.getElementById("term").value;
+
+  // If x is Not a Number or less than one or greater than 40
+  
+  if (isNaN(term) || term < 1 || term > 40) {
+  text = "Input not valid.  Must be number 1-40.";
+  } else {
+    document.getElementById("termValidation").style.visibility = "hidden";
+    text = "Input OK";
+    document.getElementById("term").style.backgroundColor = "white";
+  }
+  document.getElementById("termValidation").innerHTML = text;
+}
+function validateForm() {
+  var aprValid, termValid, amountValid, apr, term, amount;
+  // Validate amount
+  amount = document.getElementById("amount").value;
+  if (isNaN(amount) || amount == 0) {
+    amountValid = 0;
+    setAmountFocus();
+    document.getElementById("payment").innerHTML = "Loan Amount can't be zero.";
+    document.getElementById("amount").style.backgroundColor = "lightpink";
+  } else {
+    amountValid = 1;
+    document.getElementById("amount").style.backgroundColor = "white";
+  }
+  // Validate Term
+  term = document.getElementById("term").value;
+  if (isNaN(term) || term < 1 || term > 40) {
+    termValid = 0;
+    setTermFocus();
+    document.getElementById("termValidation").innerHTML =
+    "Input not valid.  Must be number 1-40.";
+    document.getElementById("term").style.backgroundColor = "lightpink";
+  } else {
+    termValid = 1;
+  }
+  // Validate APR
+  apr = document.getElementById("apr").value;
+  if (isNaN(apr) || apr < 0 || apr > 25) {
+    aprValid = 0;
+    setAprFocus();
+    document.getElementById("payment").innerHTML = "Please fix input";
+    document.getElementById("apr").style.backgroundColor = "lightpink";
+  } else {
+    aprValid = 1;
+    document.getElementById("apr").style.backgroundColor = "white";
+  }
+
+
+  // If Valid calculateM()
+  if (aprValid == 1 && termValid == 1 && amountValid == 1) {
+    document.getElementById("payment").style.color = "black";
+    calculateM();
+  } else {
+    document.getElementById("payment").style.visibility = "visible";
+    document.getElementById("payment").style.color = "red";
+    document.getElementById("payment").innerHTML = "Please fix input.";
+  }
+
+  }
+function calculateM() {
+  //document.getElementById("payment").innerHTML = "$ "+ payment;
+  var apr, rate, rate1, term, amount, payment, expo, monthlyPayment;
+  apr = document.getElementById("apr").value;
+  rate = document.getElementById("apr").value * .01 / 12;
+  term = document.getElementById("term").value * 12;
+  amount = document.getElementById("amount").value;
+  expo = Math.pow(rate + 1, term);
+  if (apr == 0) {
+    payment = amount / term;
+  } else {
+    payment = amount * ((rate * expo) / (expo - 1));
+  }
+      
+  monthlyPayment = payment.toFixed(2);
+  document.getElementById("payment").style.visibility = "visible";
+  document.getElementById("payment").innerHTML = "$ " + monthlyPayment;
+}
+
+function setFocus() {
+  document.getElementById("apr").focus();
+}
+function clearForm() {
+  document.getElementById("aprValidation").innerHTML = "Enter input";
+  document.getElementById("aprValidation").style.visibility = "hidden";
+  document.getElementById("payment").style.visibility = "hidden";
+  document.getElementById("termValidation").style.visibility = "hidden";
+  document.getElementById("apr").style.backgroundColor = "white";
+  document.getElementById("term").style.backgroundColor = "white";
+  document.getElementById("amount").style.backgroundColor = "white";
+  setAprFocus();
+}
+  </script>
+  
+</body>
+</html>
