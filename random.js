@@ -52,3 +52,35 @@ function addToIndex() {
 function testFunction () {
    document.getElementById("demo").innerHTML= "yo";
 }
+
+function greet({greeting,name,age}) {
+    return `${greeting}! My name is ${name} and I am ${age} years old.`;
+}
+
+console.log(greet({ greeting: `What's up dude`, age: 10, name: `Bart` }));
+
+const dice = {
+    sides: 20,
+    roll() {
+        return Math.floor(this.sides * Math.random()) + 1;
+    }
+}
+
+console.log(dice.roll());
+
+
+const wonderWoman = {
+    name: 'Wonder Woman',
+    'real name': 'Diana Prince',
+    height: 72,
+    weight: 165,
+    hero: true,
+    villain: false,
+    allies: ['Wonder Girl','Donna Troy','Superman'],
+    lasso: function(){
+        console.log('You will tell the truth!');
+    }
+}
+
+console.log(JSON.stringify(wonderWoman));
+console.log(JSON.stringify(wonderWoman, null, " "));
