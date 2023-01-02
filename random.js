@@ -1,6 +1,6 @@
 const links = [
      {  label: "NEGL Page",        url: "NEGL/NeglMainIndex.html"    },
-     {  label: "Week 2",        url: "week2/week2index"    }
+     {  label: "AlcalaU",        url: "AlcalaU/university.html"    }
      
 ]
 const superman = {
