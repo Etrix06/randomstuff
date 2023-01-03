@@ -1,7 +1,7 @@
 const links = [
      {  label: "NEGL Page",                  url: "NEGL/NeglMainIndex.html"    },
-     {  label: "Mortgage Calculator",        url: "MorgageCalculator/assign07.html"    },
-     {  label: "Store",                      url: "store/assign11.html"    },
+     {  label: "Mortgage Calculator",        url: "MortgageCalculator/assign07.html"    },
+     {  label: "Store",                      url: "Store/assign11.html"    },
      {  label: "AlcalaU",                    url: "AlcalaU/university.html"    }
      
 ]
